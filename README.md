@@ -94,23 +94,131 @@ npm run build
 
 ## Project Structure
 
-src/
-  ├── components/
-  │   ├── EditTransaction.jsx
-  │   ├── Home.jsx
-  │   ├── Nav.jsx
-  │   ├── NewTransaction.jsx
-  │   ├── Transaction.jsx
-  │   └── Transactions.jsx
-  ├── App.jsx
-  ├── functions.js
-  ├── index.css
-  └── index.js
-public/
-  ├── index.html
-  └── ...
-package.json
 ```
+FinanceTrack/
+│
+├─── node_modules/
+│
+├─── public/
+│    └─── vite.svg
+│
+├─── src/
+│    │
+│    ├─── Components/
+│    │    ├─── NavBar.jsx
+│    │    ├─── Transaction.jsx
+│    │    ├─── TransactionDetails.jsx
+│    │    ├─── TransactionEditForm.jsx
+│    │    ├─── TransactionNewForm.jsx
+│    │    └─── Transactions.jsx
+│    │
+│    ├─── Pages/
+│    │    ├─── EditPage.jsx
+│    │    ├─── ErrorPage.jsx
+│    │    ├─── HomePage.jsx
+│    │    ├─── IndexPage.jsx
+│    │    ├─── NewPage.jsx
+│    │    └─── ShowPage.jsx
+│    │
+│    ├─── assets/
+│    │
+│    ├─── App.css
+│    ├─── App.jsx
+│    ├─── index.css
+│    └─── main.jsx
+│
+├─── .gitignore
+├─── .eslintrc.cjs
+├─── README.md
+├─── index.html
+├─── package-lock.json
+├─── package.json
+└─── vite.config.js
+
+```
+
+
+## Wireframe
+ 
+ ```
+To create a wireframe based on the commit message, here's a structured layout of your project:
+
+### Project Structure
+```
+FinanceTrack/
+│
+└─── src/
+     │
+     ├─── Components/
+     │    ├─── NavBar.jsx
+     │    ├─── Transaction.jsx
+     │    ├─── TransactionDetails.jsx
+     │    ├─── TransactionEditForm.jsx
+     │    ├─── TransactionNewForm.jsx
+     │    └─── Transactions.jsx
+     │
+     ├─── Pages/
+     │    ├─── EditPage.jsx
+     │    ├─── ErrorPage.jsx
+     │    ├─── HomePage.jsx
+     │    ├─── IndexPage.jsx
+     │    ├─── NewPage.jsx
+     │    └─── ShowPage.jsx
+     │
+     ├─── assets/
+     │
+     ├─── App.css
+     ├─── App.jsx
+     ├─── index.css
+     └─── main.jsx
+```
+
+### Wireframe
+
+#### Components
+1. **NavBar.jsx**: Navigation bar present on all pages.
+2. **Transaction.jsx**: Represents a single transaction, likely used in lists.
+3. **TransactionDetails.jsx**: Detailed view of a single transaction.
+4. **TransactionEditForm.jsx**: Form to edit an existing transaction.
+5. **TransactionNewForm.jsx**: Form to create a new transaction.
+6. **Transactions.jsx**: List of all transactions.
+
+#### Pages
+1. **EditPage.jsx**: Page for editing a transaction, contains `TransactionEditForm`.
+2. **ErrorPage.jsx**: Page displayed when a route is not found or an error occurs.
+3. **HomePage.jsx**: Home page of the application.
+4. **IndexPage.jsx**: Page displaying a list of all transactions, contains `Transactions`.
+5. **NewPage.jsx**: Page for creating a new transaction, contains `TransactionNewForm`.
+6. **ShowPage.jsx**: Page displaying details of a single transaction, contains `TransactionDetails`.
+
+#### Static Assets
+- **assets/**: Folder to store static assets like images, icons, etc.
+
+#### Styles and Entry Points
+- **App.css**: Global styles for the application.
+- **App.jsx**: Main App component that includes routing and layout.
+- **index.css**: Additional global styles.
+- **main.jsx**: Main entry point, likely where React is rendered to the DOM.
+
+### Creating the Directory and Files
+
+To create this structure and files in the command line:
+
+```bash
+mkdir -p src/{Components,Pages,assets}
+touch src/App.css src/App.jsx src/index.css src/main.jsx
+touch src/Components/{NavBar.jsx,Transaction.jsx,TransactionDetails.jsx,TransactionEditForm.jsx,TransactionNewForm.jsx,Transactions.jsx}
+touch src/Pages/{EditPage.jsx,ErrorPage.jsx,HomePage.jsx,IndexPage.jsx,NewPage.jsx,ShowPage.jsx}
+```
+
+This command will create the necessary directories and files as per the project structure outlined above.
+
+
+ ```
+  
+
+
+
 
 ## Components
 

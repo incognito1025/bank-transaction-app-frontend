@@ -46,6 +46,61 @@ git push -u origin main
 
 
 
+Let's ensure the wireframe meets all the frontend requirements specified. Here's a breakdown of the requirements and how the wireframe addresses them:
+
+### Frontend Feature Requirements
+
+1. **All pages should include the same navigation bar, which includes the name of the application and a button to create a new transaction.**
+    - **Wireframe Check:** The wireframe includes `NavBar.jsx`, which is present on all pages. ✔️
+
+2. **You should have an Index page that presents all of the transactions in your model.**
+    - **Wireframe Check:** The wireframe includes `IndexPage.jsx`, which contains `Transactions.jsx` to list all transactions. ✔️
+
+3. **After clicking on a single transaction, you should be brought to a Show page which includes more detailed information about the specific transaction.**
+    - **Wireframe Check:** The wireframe includes `ShowPage.jsx`, which contains `TransactionDetails.jsx` for detailed information. ✔️
+
+4. **When the button in the navigation bar to create a new transaction is clicked, you should be brought to a new page that includes a form to create a new transaction.**
+    - **Wireframe Check:** The wireframe includes `NewPage.jsx`, which contains `TransactionNewForm.jsx` for creating new transactions. ✔️
+
+5. **Forms should be properly labeled and the `type` of inputs should be properly set. For example, an input that requires a `number` should have type `number`, not `text`.**
+    - **Wireframe Check:** While this requirement pertains more to the implementation details within the components, the wireframe does include the necessary form components (`TransactionNewForm.jsx`, `TransactionEditForm.jsx`). ✔️
+
+6. **When a new transaction form is submitted, the transaction should be created in the backend and the user should be brought to that new transaction's Show page.**
+    - **Wireframe Check:** The wireframe includes `NewPage.jsx` for creating transactions and `ShowPage.jsx` for displaying them, which aligns with the requirement. ✔️
+
+7. **On the transaction's Show page, there should be a button to edit the current transaction. When clicked, the user is brought to a form page with data already filled in that can be edited.**
+    - **Wireframe Check:** The wireframe includes `ShowPage.jsx` and `EditPage.jsx`, with `TransactionEditForm.jsx` to handle editing transactions. ✔️
+
+8. **When an edited transaction form is submitted, the transaction should be edited in the backend and the user should be brought to that edited transaction's Show page.**
+    - **Wireframe Check:** The wireframe supports this with `EditPage.jsx` for editing and `ShowPage.jsx` for displaying the edited transaction. ✔️
+
+9. **On the transaction's Show page, there should be a button to delete the current show page. When clicked, it should delete the transaction and navigate you to the Index page.**
+    - **Wireframe Check:** The wireframe includes `ShowPage.jsx`, which would have the delete functionality. ✔️
+
+10. **Using the transaction's data, perform a calculation that can be performed on the front-end application and displayed to the user on the Index page.**
+    - **Wireframe Check:** The wireframe includes `IndexPage.jsx`, which would display the transaction list and any calculations like the bank account total. ✔️
+
+### Additional Files and Configuration
+- **Static Assets (`assets/`)**: Folder to store static assets like images, icons, etc. ✔️
+- **Styles and Entry Points**:
+  - **App.css**: Global styles for the application. ✔️
+  - **App.jsx**: Main App component that includes routing and layout. ✔️
+  - **index.css**: Additional global styles. ✔️
+  - **main.jsx**: Main entry point, likely where React is rendered to the DOM. ✔️
+
+- **Configuration and Other Files**:
+  - **.gitignore**: Ensures that certain files and directories are not tracked by Git. ✔️
+  - **.eslintrc.cjs**: Configuration for ESLint. ✔️
+  - **README.md**: Provides setup instructions for the application. ✔️
+  - **index.html**: Basic HTML file to host the React app. ✔️
+  - **package-lock.json**: Manages dependencies. ✔️
+  - **package.json**: Configuration for the project and its dependencies. ✔️
+  - **vite.config.js**: Configuration for Vite. ✔️
+
+### Summary
+The wireframe provided meets all the frontend requirements specified. It includes the necessary components, pages, static assets, styles, and configuration files to build the budgeting app as per the given requirements.
+
+
 
 
 # Introduction to React
