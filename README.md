@@ -140,9 +140,6 @@ FinanceTrack/
 
 ## Wireframe
  
- ```
-To create a wireframe based on the commit message, here's a structured layout of your project:
-
 ### Project Structure
 ```
 FinanceTrack/
@@ -171,6 +168,7 @@ FinanceTrack/
      ├─── App.jsx
      ├─── index.css
      └─── main.jsx
+
 ```
 
 ### Wireframe
@@ -205,19 +203,12 @@ FinanceTrack/
 To create this structure and files in the command line:
 
 ```bash
+
 mkdir -p src/{Components,Pages,assets}
 touch src/App.css src/App.jsx src/index.css src/main.jsx
 touch src/Components/{NavBar.jsx,Transaction.jsx,TransactionDetails.jsx,TransactionEditForm.jsx,TransactionNewForm.jsx,Transactions.jsx}
 touch src/Pages/{EditPage.jsx,ErrorPage.jsx,HomePage.jsx,IndexPage.jsx,NewPage.jsx,ShowPage.jsx}
 ```
-
-This command will create the necessary directories and files as per the project structure outlined above.
-
-
-  
-
-
-
 
 ## Components
 
@@ -237,7 +228,7 @@ Basic styling is included in `index.css`. You can customize the styles as needed
 
 ## Scripts
 
-- `start`: Starts the development server.
+- `dev : Starts the development server.
 - `build`: Creates a production build.
 - `test`: Runs tests.
 - `eject`: Ejects the application, providing full control over the configuration.
@@ -254,8 +245,6 @@ Basic styling is included in `index.css`. You can customize the styles as needed
 - `web-vitals`
 
 ## Backend Repository
-
-
 
 
 ## Detailed Explanation of Vite files and folders
