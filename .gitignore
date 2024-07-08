@@ -23,3 +23,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#files
+
+PROJECTINSTRUCTIONS.md
+oldAppCode.md
+notes.md
+instructions.md

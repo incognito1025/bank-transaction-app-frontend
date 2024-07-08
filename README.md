@@ -176,29 +176,29 @@ FinanceTrack/
 ### Wireframe
 
 #### Components
-1. **NavBar.jsx**: Navigation bar present on all pages.
-2. **Transaction.jsx**: Represents a single transaction, likely used in lists.
-3. **TransactionDetails.jsx**: Detailed view of a single transaction.
-4. **TransactionEditForm.jsx**: Form to edit an existing transaction.
-5. **TransactionNewForm.jsx**: Form to create a new transaction.
-6. **Transactions.jsx**: List of all transactions.
+1.NavBar.js: Navigation bar present on all pages.
+2.Transaction.js: Represents a single transaction, likely used in lists.
+3.TransactionDetails.js: Detailed view of a single transaction.
+4.TransactionEditForm.js: Form to edit an existing transaction.
+5.TransactionNewForm.js: Form to create a new transaction.
+6.Transactions.js: List of all transactions.
 
 #### Pages
-1. **EditPage.jsx**: Page for editing a transaction, contains `TransactionEditForm`.
-2. **ErrorPage.jsx**: Page displayed when a route is not found or an error occurs.
-3. **HomePage.jsx**: Home page of the application.
-4. **IndexPage.jsx**: Page displaying a list of all transactions, contains `Transactions`.
-5. **NewPage.jsx**: Page for creating a new transaction, contains `TransactionNewForm`.
-6. **ShowPage.jsx**: Page displaying details of a single transaction, contains `TransactionDetails`.
+1.EditPage.js: Page for editing a transaction, contains `TransactionEditForm`.
+2.ErrorPage.js: Page displayed when a route is not found or an error occurs.
+3.HomePage.js: Home page of the application.
+4.IndexPage.js: Page displaying a list of all transactions, contains `Transactions`.
+5.NewPage.js: Page for creating a new transaction, contains `TransactionNewForm`.
+6.ShowPage.js: Page displaying details of a single transaction, contains `TransactionDetails`.
 
 #### Static Assets
-- **assets/**: Folder to store static assets like images, icons, etc.
+-assets: Folder to store static assets like images, icons, etc.
 
 #### Styles and Entry Points
-- **App.css**: Global styles for the application.
-- **App.jsx**: Main App component that includes routing and layout.
-- **index.css**: Additional global styles.
-- **main.jsx**: Main entry point, likely where React is rendered to the DOM.
+-App.cs: Global styles for the application.
+-App.js: Main App component that includes routing and layout.
+-index.cs: Additional global styles.
+-main.js: Main entry point, likely where React is rendered to the DOM.
 
 ### Creating the Directory and Files
 
@@ -214,7 +214,6 @@ touch src/Pages/{EditPage.jsx,ErrorPage.jsx,HomePage.jsx,IndexPage.jsx,NewPage.j
 This command will create the necessary directories and files as per the project structure outlined above.
 
 
- ```
   
 
 
@@ -222,31 +221,7 @@ This command will create the necessary directories and files as per the project 
 
 ## Components
 
-### `EditTransaction.jsx`
 
-Allows users to edit an existing transaction. It fetches the transaction data by ID and populates the form, which can be submitted to update the transaction.
-
-### `Home.jsx`
-
-A simple component displaying a welcome message.
-
-### `Nav.jsx`
-
-The navigation bar with links to different sections of the application.
-
-### `NewTransaction.jsx`
-
-Provides a form to create a new transaction. Submitting the form sends a POST request to the backend.
-
-### `Transaction.jsx`
-
-Displays details of a single transaction. It allows users to delete or edit the transaction.
-
-### `Transactions.jsx`
-
-Fetches and displays a list of all transactions. It calculates and displays the total budget.
-
-## Routes
 
 The application uses React Router to handle routing. The routes are defined in `App.jsx`:
 
@@ -285,7 +260,7 @@ Basic styling is included in `index.css`. You can customize the styles as needed
 
 ## Detailed Explanation of Vite files and folders
 
-> **Note** The only boilerplate file you will be heavily editing for your in-class builds is `src/App.jsx`.
+>Not The only boilerplate file you will be heavily editing for your in-class builds is `src/App.jsx`.
 
 ### `src/`
 The `src/` folder (short for source) is where you will build your React application. All the code in this folder will be bundled to build your React application. If you try to add code or assets outside of this folder, they will not be able to be loaded into your React application (which will be loaded inside the `div` with the id of `root` from `index.html`). There are several files here that demonstrate how to set up some common application elements, including:
@@ -372,29 +347,3 @@ Serves as personal or team-specific document used primarily for jotting down inf
 [Link](https://github.com/incognito1025/bank-transaction-app-backend.git)
 
 
-Commit message:
-
-
-## Project Structure
-
-src/
-  ├── components/
-  │   ├── EditTransaction.jsx
-  │   ├── Home.jsx
-  │   ├── Nav.jsx
-  │   ├── NewTransaction.jsx
-  │   ├── Transaction.jsx
-  │   └── Transactions.jsx
-  ├── App.jsx
-  ├── functions.js
-  ├── index.css
-  └── index.js
-public/
-  ├── index.html
-  └── ...
-package.json
-```
-
-Commit Message:
-
-addition of folder src & its subfolders and files including- Components, Pages, assets, App.css, App.jsx, index.css, main.jsx; addition of NavBar.jsx Transaction.jsx TransactionDetails.jsx TransactionEditForm.jsx TransactionNewForm.jsx Transactions.jsx inside Components folder; addition of EditPage.jsx ErrorPage.jsx HomePage.jsx IndexPage.jsx NewPage.jsx ShowPage.jsx inside of Pages folder; update of index.html title
