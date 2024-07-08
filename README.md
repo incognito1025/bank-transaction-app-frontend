@@ -289,4 +289,4 @@ package.json
 
 Commit Message:
 
-addition of folder src & its subfolders and files including- Components, Pages, assets, App.css, App.jsx, index.css, main.jsx; addition of NavBar.jsx Transaction.jsx TransactionDetails.jsx TransactionEditForm.jsx TransactionNewForm.jsx Transactions.jsx inside Components folder; addition of EditPage.jsx ErrorPage.jsx HomePage.jsx IndexPage.jsx NewPage.jsx ShowPage.jsx inside of Pages folder.
+addition of folder src & its subfolders and files including- Components, Pages, assets, App.css, App.jsx, index.css, main.jsx; addition of NavBar.jsx Transaction.jsx TransactionDetails.jsx TransactionEditForm.jsx TransactionNewForm.jsx Transactions.jsx inside Components folder; addition of EditPage.jsx ErrorPage.jsx HomePage.jsx IndexPage.jsx NewPage.jsx ShowPage.jsx inside of Pages folder; update of index.html title
