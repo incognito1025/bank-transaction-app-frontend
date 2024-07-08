@@ -1,4 +1,15 @@
 //app.css
+div {
+    border: 1px solid gold;
+  }
+
+  .App {
+    background: mintcream; /* if mintcream is too light you can try mistyrose or another color */
+    min-height: 100vh;
+  }
+
+
+//app.css
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
