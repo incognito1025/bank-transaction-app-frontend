@@ -1,0 +1,123 @@
+
+.navbar {
+    background-color: #B7FEE5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+  
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.menu-icon {
+    display: none; /* Hide by default on larger screens */
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+.menu-links {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    right: 20px;
+    background-color: #B7FEE5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.menu-links.open {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-links a {
+    color: black;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.menu-links a:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show menu icon on smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide horizontal links on smaller screens */
+    }
+}
+.nav-wrapper {
+    background-color: #B7FEE5;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-wrapper h1 {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .nav-wrapper nav ul {
+    list-style-type: none; /* Remove default list styles */
+    display: flex;
+  }
+  
+  .nav-wrapper nav ul li {
+    margin-right: 20px; /* Adjust spacing between navigation items */
+  }
+  
+  .nav-wrapper nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  
+  .nav-wrapper nav ul li button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .nav-wrapper nav ul li button:hover {
+    text-decoration: underline;
+  }
+  

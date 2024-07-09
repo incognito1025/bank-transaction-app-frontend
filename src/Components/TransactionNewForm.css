@@ -1,0 +1,50 @@
+/* TransactionNewForm.css */
+
+.newTransaction {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .newTransaction h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .newTransaction form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .newTransaction label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .newTransaction input,
+  .newTransaction select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+  }
+  
+  .newTransaction button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .newTransaction button:hover {
+    background-color: #0056b3;
+  }
+  

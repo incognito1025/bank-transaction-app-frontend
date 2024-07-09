@@ -1,0 +1,86 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for NavBar */
+.nav-wrapper {
+    background-color: #333;
+    color: #fff;
+    padding: 30px; /* Increased padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-wrapper h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.nav-wrapper nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Ensure items are centered */
+}
+
+.nav-wrapper nav ul li {
+    margin-right: 20px;
+}
+
+/* letter color font */
+.nav-wrapper nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+
+/* New Transaction */
+.nav-wrapper nav ul li a.button {
+    background-color: #007bff;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+/* Styles for Transaction component */
+.transaction-card {
+    background-color: #fff;
+    padding: 15px 0; /* Adjusted padding */
+    margin: 10px 0;
+    border-bottom: 1px solid #c6c1c1; /* Super thin line */
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+.transaction-card .transaction-date {
+    margin-left: 60px; /* Moved an inch to the right */
+    width: 100px; /* Fixed width for consistency */
+}
+
+.transaction-card .transaction-name {
+    text-decoration: none;
+    color: #007bff; /* Different color to indicate it's clickable */
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.transaction-card .transaction-amount {
+    margin-right: 60px; /* Moved an inch to the left */
+    width: 100px; /* Fixed width for consistency */
+    text-align: right; /* Align amount to the right */
+}
+
+/* Styles for the main content area */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
