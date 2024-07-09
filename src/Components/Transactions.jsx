@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Transactions() {
+function Transactions() {
   return (
     <div>
-      
+      Transactions
     </div>
   )
 }
+
+export default Transactions;

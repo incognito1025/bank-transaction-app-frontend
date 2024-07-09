@@ -10,6 +10,8 @@ import Show from "./Pages/ShowPage"
 
 import NavBar from './Components/NavBar'
 
+const API = import.meta.env.VITE_API_URL
+
 
 function App() {
   return (

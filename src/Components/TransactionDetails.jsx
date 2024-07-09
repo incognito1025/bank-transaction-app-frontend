@@ -8,4 +8,4 @@ function TransactionDetails() {
   )
 }
 
-export default TransactionDetails
+export default TransactionDetails;
