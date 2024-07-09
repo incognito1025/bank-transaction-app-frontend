@@ -8,4 +8,4 @@ function EditPage() {
   )
 }
 
-export default EditPage
+export default EditPage;

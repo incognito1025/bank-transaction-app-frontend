@@ -8,4 +8,4 @@ function ShowPage() {
   )
 }
 
-export default ShowPage
+export default ShowPage;

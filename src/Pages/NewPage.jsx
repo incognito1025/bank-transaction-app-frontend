@@ -8,4 +8,4 @@ function NewPage() {
   )
 }
 
-export default NewPage
+export default NewPage;
