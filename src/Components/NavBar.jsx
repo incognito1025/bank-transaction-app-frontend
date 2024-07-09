@@ -1,21 +1,38 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
   return (
-    <header>
-      <h1>My Navigation Bar</h1>
-    </header>
+    <div>
+      <h1>FinanceTrack App</h1>
+      <nav>
+          <Link to="/transactions">Index</Link>
+          <button>
+            <Link to="/transactions">New Transaction</Link>
+          </button>
+      </nav>
+    </div>
   )
 }
 
 export default NavBar;
 
+//NavBar.jsx: Navigation bar with links to the Index page and New Transaction form, and displays the app name.
 
 /*
 1.NavBar.js: Navigation bar present on all pages.
 2. All pages should include the same navigation bar, which includes the name of the application and a button to create a new transaction.
 3. When the button in the navigation bar to create a new transaction is clicked, you should be brought to a new page that includes a form to create a new transaction.
 4. Stretch Goals - Display the bank account total in the nav bar (or similar component that is visible on all views), instead of just on the index page.
+Routes>
+            <Route path='/' element={ <Home/>} />
+            <Route path='/transactions' element={ <Index/>} />
+            <Route path='/transactions/:id' element={ <Show/>} />
+            <Route path='/transactions/:id/edit' element={ <Edit/>} />
+            <Route path='/transactions/new' element={ <New/>} />
+            <Route path='*' element={ <Error/>} />
+          </Routes>
+
 
 */
 
