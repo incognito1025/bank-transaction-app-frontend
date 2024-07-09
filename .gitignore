@@ -24,9 +24,15 @@ dist-ssr
 *.sln
 *.sw?
 
-#files
+/folder_to_ignore/
+/another_folder_to_ignore/
 
+
+
+# Ignore config.js file
+config.js
 PROJECTINSTRUCTIONS.md
 oldAppCode.md
 notes.md
 instructions.md
+README.md
