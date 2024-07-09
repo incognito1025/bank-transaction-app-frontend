@@ -6,7 +6,7 @@ function EditPage() {
     <div className="Edit">
       <h2>Edit</h2>
       {/* Uncomment the line below to render the TransactionEditForm component */}
-      {/* <TransactionEditForm /> */}
+      <TransactionEditForm />
     </div>
   );
 }

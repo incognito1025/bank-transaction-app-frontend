@@ -6,7 +6,7 @@ function NewPage() {
     <div className="New">
       <h2>New</h2>
       {/* Uncomment the line below to render the TransactionNewForm component */}
-      {/* <TransactionNewForm /> */}
+      <TransactionNewForm />
     </div>
   );
 }

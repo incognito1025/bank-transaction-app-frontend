@@ -1,3 +1,5 @@
+// TransactionNewForm.jsx
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TransactionNewForm.css'; // Import the CSS file
@@ -5,83 +7,94 @@ import './TransactionNewForm.css'; // Import the CSS file
 const API = import.meta.env.VITE_API_URL; // API endpoint from environment variables
 
 function TransactionNewForm() {
-  const [transaction, setTransactionDetails] = useState({
-    item_name: '',
-    amount: '',
-    date: '',
-    from: '',
-    category: ''
-  });
-
-  const navigate = useNavigate();
-
-  const handleTextChange = (event) => {
-    setTransactionDetails({ ...transaction, [event.target.id]: event.target.value });
-  };
-
-  const addTransaction = () => {
-    fetch(`${API}/transactions`, {
-      method: 'POST',
-      body: JSON.stringify(transaction),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then((response) => response.json())
-      .then((newTransaction) => {
-        alert("Transaction added successfully!");
-        navigate(`/transactions/${newTransaction.id}`);
-      })
-      .catch((error) => console.error(error));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (transaction.item_name && transaction.amount && transaction.date && transaction.from && transaction.category) {
-      addTransaction();
-      setTransactionDetails({
+    // State initialization using useState hook
+    const [transaction, setTransactionDetails] = useState({
+        id: '', // You may handle ID generation here or on the server side
         item_name: '',
         amount: '',
         date: '',
         from: '',
         category: ''
-      });
-    } else {
-      alert('Please fill out all fields.');
-    }
-  };
+    });
 
-  return (
-    <div className='newTransaction'>
-      <h1>New Transaction</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='item_name'>Item Name:</label>
-        <input id='item_name' type='text' value={transaction.item_name} required onChange={handleTextChange} />
+    let navigate = useNavigate(); // Provides navigation functionality from React Router
 
-        <label htmlFor='amount'>Amount:</label>
-        <input id='amount' type='number' value={transaction.amount} required onChange={handleTextChange} />
+    // Function to handle input changes in the form fields
+    const handleTextChange = (event) => {
+        setTransactionDetails({ ...transaction, [event.target.id]: event.target.value });
+    };
 
-        <label htmlFor='date'>Date:</label>
-        <input id='date' type='date' value={transaction.date} required onChange={handleTextChange} />
+    // Function to add a new transaction via API
+    const addTransaction = () => {
+        fetch(`${API}/transactions`, {
+            method: 'POST',
+            body: JSON.stringify(transaction),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(() => {
+                navigate(`/transactions`); // Navigate back to transaction list after submission
+            })
+            .catch((error) => console.error(error));
+    };
 
-        <label htmlFor='from'>From:</label>
-        <input id='from' type='text' value={transaction.from} required onChange={handleTextChange} />
+    // Function to handle form submission
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Prevent default form submission behavior
 
-        <label htmlFor='category'>Category:</label>
-        <select id='category' value={transaction.category} onChange={handleTextChange} required>
-          <option value=''>Please Select One</option>
-          <option value='Income'>Income</option>
-          <option value='Expense'>Expense</option>
-          <option value='Other'>Other</option>
-        </select>
+        // Optional: Perform client-side validation before submitting
+        if (transaction.item_name && transaction.amount && transaction.date && transaction.from && transaction.category) {
+            addTransaction(); // Call addTransaction function to submit the transaction
 
-        <button type='submit'>Submit</button>
-      </form>
-    </div>
-  );
+            // Reset form fields to empty strings after submission
+            setTransactionDetails({
+                id: '',
+                item_name: '',
+                amount: '',
+                date: '',
+                from: '',
+                category: ''
+            });
+        } else {
+            alert('Please fill out all fields.'); // Example of simple validation alert
+        }
+    };
+
+    // JSX rendering: form for creating a new transaction
+    return (
+        <div className='newTransaction'>
+            <h1>New Transaction</h1>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor='item_name'>Item Name:</label>
+                <input id='item_name' type='text' value={transaction.item_name} required onChange={handleTextChange} />
+
+                <label htmlFor='amount'>Amount:</label>
+                <input id='amount' type='number' value={transaction.amount} required onChange={handleTextChange} />
+
+                <label htmlFor='date'>Date:</label>
+                <input id='date' type='date' value={transaction.date} required onChange={handleTextChange} />
+
+                <label htmlFor='from'>From:</label>
+                <input id='from' type='text' value={transaction.from} required onChange={handleTextChange} />
+
+                <label htmlFor='category'>Category:</label>
+                <select id='category' value={transaction.category} onChange={handleTextChange} required>
+                    <option value=''>Please Select One</option>
+                    <option value='Income'>Income</option>
+                    <option value='Expense'>Expense</option>
+                    <option value='Other'>Other</option>
+                </select>
+
+                <button type='submit'>Submit</button>
+            </form>
+        </div>
+    );
 }
 
 export default TransactionNewForm;
+
+
 
 
 
