@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import './TransactionNewForm.css';
+
 
 function Transaction({ transaction }) {
     const formatDate = (dateString) => {
