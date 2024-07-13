@@ -14,6 +14,7 @@ export default ShowPage;
 
 
 
+
 /*
 6.ShowPage.js: Page displaying details of a single transaction, contains `TransactionDetails`.
 <Route path='/transactions/:id' element={ <Show/>} />

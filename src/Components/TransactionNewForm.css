@@ -1,50 +1,48 @@
 /* TransactionNewForm.css */
 
-.newTransaction {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .newTransaction h1 {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .newTransaction form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .newTransaction label {
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  .newTransaction input,
-  .newTransaction select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 1rem;
-  }
-  
-  .newTransaction button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .newTransaction button:hover {
-    background-color: #0056b3;
-  }
-  
+.NewTransactionForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.NewTransactionForm h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.NewTransactionForm form {
+  display: grid;
+  gap: 10px;
+}
+
+.NewTransactionForm label {
+  font-weight: bold;
+}
+
+.NewTransactionForm input[type="text"],
+.NewTransactionForm input[type="number"],
+.NewTransactionForm input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.NewTransactionForm button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.NewTransactionForm button[type="submit"]:hover {
+  background-color: #0056b3;
+}

@@ -1,35 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 function Transaction({ transaction }) {
-  // Function to format date
-  const formatDate = (dateString) => {
-    const options = { month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  };
+    const formatDate = (dateString) => {
+        const options = { month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+    };
 
-  return (
-    <div className="transaction-card">
-      <div className="transaction-date">{formatDate(transaction.date)}</div>
-      <Link to={`/transactions/${transaction.id}`} className="transaction-name">
-        {transaction.item_name}
-      </Link>
-      <div className="transaction-amount">${transaction.amount.toFixed(2)}</div>
-    </div>
-  );
+    return (
+        <div className="transaction-card">
+            <div className="transaction-date">{formatDate(transaction.date)}</div>
+            <Link to={`/transactions/${transaction.id}`} className="transaction-name">
+                {transaction.item_name}
+            </Link>
+            <div className="transaction-amount">${transaction.amount}</div>
+        </div>
+    );
 }
 
 Transaction.propTypes = {
-  transaction: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    item_name: PropTypes.string.isRequired,
-    amount: PropTypes.number.isRequired,
-  }).isRequired,
+    transaction: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        item_name: PropTypes.string.isRequired,
+        amount: PropTypes.number.isRequired,
+    }).isRequired,
 };
 
 export default Transaction;
+
+
 
 
 

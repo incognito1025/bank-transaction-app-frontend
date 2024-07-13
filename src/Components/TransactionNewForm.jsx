@@ -1,5 +1,3 @@
-// TransactionNewForm.jsx
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TransactionNewForm.css'; // Import the CSS file
@@ -7,7 +5,6 @@ import './TransactionNewForm.css'; // Import the CSS file
 const API = import.meta.env.VITE_API_URL; // API endpoint from environment variables
 
 function TransactionNewForm() {
-    // State initialization using useState hook
     const [transaction, setTransactionDetails] = useState({
         id: '', // You may handle ID generation here or on the server side
         item_name: '',
@@ -19,12 +16,10 @@ function TransactionNewForm() {
 
     let navigate = useNavigate(); // Provides navigation functionality from React Router
 
-    // Function to handle input changes in the form fields
     const handleTextChange = (event) => {
         setTransactionDetails({ ...transaction, [event.target.id]: event.target.value });
     };
 
-    // Function to add a new transaction via API
     const addTransaction = () => {
         fetch(`${API}/transactions`, {
             method: 'POST',
@@ -39,7 +34,6 @@ function TransactionNewForm() {
             .catch((error) => console.error(error));
     };
 
-    // Function to handle form submission
     const handleSubmit = (event) => {
         event.preventDefault(); // Prevent default form submission behavior
 
@@ -57,13 +51,12 @@ function TransactionNewForm() {
                 category: ''
             });
         } else {
-            alert('Please fill out all fields.'); // Example of simple validation alert
+            alert('Please fill out all fields.'); // Example of simple validation
         }
     };
 
-    // JSX rendering: form for creating a new transaction
     return (
-        <div className='newTransaction'>
+        <div className="NewTransactionForm">
             <h1>New Transaction</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='item_name'>Item Name:</label>
@@ -79,12 +72,7 @@ function TransactionNewForm() {
                 <input id='from' type='text' value={transaction.from} required onChange={handleTextChange} />
 
                 <label htmlFor='category'>Category:</label>
-                <select id='category' value={transaction.category} onChange={handleTextChange} required>
-                    <option value=''>Please Select One</option>
-                    <option value='Income'>Income</option>
-                    <option value='Expense'>Expense</option>
-                    <option value='Other'>Other</option>
-                </select>
+                <input id='category' type='text' value={transaction.category} required onChange={handleTextChange} />
 
                 <button type='submit'>Submit</button>
             </form>
@@ -93,6 +81,8 @@ function TransactionNewForm() {
 }
 
 export default TransactionNewForm;
+
+
 
 
 

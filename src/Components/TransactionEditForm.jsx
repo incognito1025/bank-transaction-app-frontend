@@ -1,81 +1,123 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const API = import.meta.env.VITE_API_URL;
 
-const TransactionEditForm = () => {
-  const [transaction, setTransactionDetails] = useState({
-    item_name: '',
-    amount: '',
-    date: '',
-    from: '',
-    category: ''
-  });
+function TransactionEditForm() {
+    const { id } = useParams();
+    const navigate = useNavigate();
 
-  const navigate = useNavigate();
-  const { id } = useParams();
+    const [transaction, setTransaction] = useState({
+        item_name: '',
+        amount: '',
+        date: '',
+        from: '',
+        category: ''
+    });
 
-  const handleTextChange = (event) => {
-    setTransactionDetails({ ...transaction, [event.target.id]: event.target.value });
-  };
+    useEffect(() => {
+        fetch(`${API}/transactions/${id}`)
+            .then((response) => response.json())
+            .then((responseJSON) => {
+                setTransaction(responseJSON);
+            })
+            .catch(() => {
+                navigate('/notfound');
+            });
+    }, [id, navigate]);
 
-  useEffect(() => {
-    fetch(`${API}/transactions/${id}`)
-      .then((response) => response.json())
-      .then((responseJSON) => {
-        setTransactionDetails(responseJSON);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [id]);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setTransaction(prevTransaction => ({
+            ...prevTransaction,
+            [name]: value
+        }));
+    };
 
-  const updateTransaction = () => {
-    fetch(`${API}/transactions/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify(transaction),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(() => {
-        alert("Transaction updated successfully!");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        fetch(`${API}/transactions/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(transaction),
+        })
+            .then(() => {
+                alert('Transaction updated successfully!');
+                navigate(`/transactions/${id}`);
+            })
+            .catch((error) => console.error(error));
+    };
+
+    const handleCancel = () => {
         navigate(`/transactions/${id}`);
-      })
-      .catch((error) => console.error(error));
-  };
+    };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    updateTransaction();
-  };
-
-  return (
-    <div>
-      <h1>Edit Transaction</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='item_name'>Item Name:</label>
-        <input id='item_name' type='text' value={transaction.item_name} required onChange={handleTextChange} />
-
-        <label htmlFor='amount'>Amount:</label>
-        <input id='amount' type='number' value={transaction.amount} required onChange={handleTextChange} />
-
-        <label htmlFor='date'>Date:</label>
-        <input id='date' type='date' value={transaction.date} required onChange={handleTextChange} />
-
-        <label htmlFor='from'>From:</label>
-        <input id='from' type='text' value={transaction.from} required onChange={handleTextChange} />
-
-        <label htmlFor='category'>Category:</label>
-        <input id='category' type='text' value={transaction.category} required onChange={handleTextChange} />
-
-        <button type='submit'>Submit</button>
-      </form>
-    </div>
-  );
-};
+    return (
+        <div>
+            <h1>Edit Transaction</h1>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Item Name:
+                    <input
+                        type="text"
+                        name="item_name"
+                        value={transaction.item_name}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <label>
+                    Amount:
+                    <input
+                        type="text"
+                        name="amount"
+                        value={transaction.amount}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <label>
+                    Date:
+                    <input
+                        type="text"
+                        name="date"
+                        value={transaction.date}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <label>
+                    From:
+                    <input
+                        type="text"
+                        name="from"
+                        value={transaction.from}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <label>
+                    Category:
+                    <input
+                        type="text"
+                        name="category"
+                        value={transaction.category}
+                        onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <button type="submit">Submit</button>
+                <button type="button" onClick={handleCancel}>Cancel</button>
+            </form>
+        </div>
+    );
+}
 
 export default TransactionEditForm;
+
 
 /*
 

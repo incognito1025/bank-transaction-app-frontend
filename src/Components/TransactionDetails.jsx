@@ -4,58 +4,65 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 const API = import.meta.env.VITE_API_URL;
 
 function TransactionDetails() {
-  const [transaction, setTransaction] = useState({
-    item_name: '',
-    amount: '',
-    date: '',
-    from: '',
-    category: ''
-  });
-  const { id } = useParams();
-  const navigate = useNavigate();
+    const [transaction, setTransaction] = useState({
+        item_name: '',
+        amount: '',
+        date: '',
+        from: '',
+        category: ''
+    });
+    const { id } = useParams();
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`${API}/transactions/${id}`)
-      .then((response) => response.json())
-      .then((responseJSON) => {
-        setTransaction(responseJSON);
-      })
-      .catch(() => {
-        navigate('/notfound');
-      });
-  }, [id, navigate]);
+    useEffect(() => {
+        fetch(`${API}/transactions/${id}`)
+            .then((response) => response.json())
+            .then((responseJSON) => {
+                setTransaction(responseJSON);
+            })
+            .catch(() => {
+                navigate('/notfound');
+            });
+    }, [id, navigate]);
 
-  const handleDelete = () => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this transaction?");
-    if (confirmDelete) {
-      fetch(`${API}/transactions/${id}`, {
-        method: 'DELETE',
-      })
-        .then(() => {
-          alert("Transaction deleted successfully!");
-          navigate('/transactions');
-        })
-        .catch((error) => console.error(error));
-    }
-  };
+    const handleDelete = () => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this transaction?");
+        if (confirmDelete) {
+            fetch(`${API}/transactions/${id}`, {
+                method: 'DELETE',
+            })
+                .then(() => {
+                    alert("Transaction deleted successfully!");
+                    navigate('/transactions');
+                })
+                .catch((error) => console.error(error));
+        }
+    };
 
-  return (
-    <div>
-      <h1>Transaction Details</h1>
-      <p><strong>Item Name:</strong> {transaction.item_name}</p>
-      <p><strong>Amount:</strong> {transaction.amount}</p>
-      <p><strong>Date:</strong> {transaction.date}</p>
-      <p><strong>From:</strong> {transaction.from}</p>
-      <p><strong>Category:</strong> {transaction.category}</p>
-      <Link to={`/transactions/${id}/edit`}>
-        <button>Edit</button>
-      </Link>
-      <button onClick={handleDelete}>Delete</button>
-    </div>
-  );
+    const handleCancel = () => {
+        navigate(`/transactions/${id}`);
+    };
+
+    return (
+        <div>
+            <h1>Transaction Details</h1>
+            <p><strong>Item Name:</strong> {transaction.item_name}</p>
+            <p><strong>Amount:</strong> {transaction.amount}</p>
+            <p><strong>Date:</strong> {transaction.date}</p>
+            <p><strong>From:</strong> {transaction.from}</p>
+            <p><strong>Category:</strong> {transaction.category}</p>
+            <Link to={`/transactions/${id}/edit`}>
+                <button>Edit</button>
+            </Link>
+            <button onClick={handleDelete}>Delete</button>
+            <button onClick={handleCancel}>Cancel</button>
+        </div>
+    );
 }
 
 export default TransactionDetails;
+
+
 
 
 
