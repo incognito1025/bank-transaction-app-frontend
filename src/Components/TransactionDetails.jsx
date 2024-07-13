@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import './TransactionDetails.css';
+//import './TransactionDetails.css';
 
 const API = import.meta.env.VITE_API_URL;
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Transaction from './Transaction';
-import './Transactions.css';
+//import './Transactions.css';
 
 const API = import.meta.env.VITE_API_URL;
 
